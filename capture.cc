@@ -7,7 +7,7 @@
 
 #include <alsa/asoundlib.h>
 
-#include "node_modules/nan/nan.h"
+#include "nan.h"
 #include "streaming-worker.h"
 
 class Capture : public StreamingWorker

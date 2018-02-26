@@ -31,9 +31,8 @@ SOFTWARE.
 #include <mutex>
 #include <chrono>
 #include <condition_variable>
-//#include <nan.h>
+#include <nan.h>
 
-#include "node_modules/nan/nan.h"
 
 using namespace Nan;
 using namespace std;
