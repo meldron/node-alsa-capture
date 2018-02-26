@@ -1,12 +1,12 @@
 {
   "name": "alsa-capture",
-  "version": "0.1",
-  "private": false,
-  "gypfile": true,
+  "version": "0.1.0",
   "description": "capture alsa pcm packages",
   "main": "index.js",
-  "author": "Bernd Kaiser",
-  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
+  },
   "dependencies": {
     "eventemitter3": "^3.0.1",
     "nan": "^2.8.0"
@@ -16,17 +16,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/meldron/node-alsa-capture.git"
+    "url": "git+https://github.com/meldron/node-alsa-capture.git"
   },
   "keywords": [
-    "addon",
     "alsa",
     "capture",
     "microphone",
     "pcm"
   ],
+  "author": "Bernd Kaiser",
+  "license": "MIT",
+  "gypfile": true,
   "bugs": {
     "url": "https://github.com/meldron/node-alsa-capture/issues"
   },
-  "homepage": "https://github.com/meldron/node-alsa-capture"
+  "homepage": "https://github.com/meldron/node-alsa-capture#readme"
 }
