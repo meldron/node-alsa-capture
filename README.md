@@ -85,6 +85,7 @@ captureInstance.on("close", () => {
 ## API
 ### `new AlsaCapture({opts}?): AlsaCaptureInstance`
 Creates a new ALSA capture instance which extends [eventemitter3](https://github.com/primus/eventemitter3) and emits several kinds of events including the PCM audio data. The optional `opts` object sets the ALSA hardware parameters.
+
 | option     | type    | description                                                         | default      |
 |------------|---------|---------------------------------------------------------------------|--------------|
 | channels   | number  | select number of channels to capture                                | 2            |
