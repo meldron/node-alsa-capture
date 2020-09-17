@@ -220,10 +220,10 @@ class Capture : public StreamingWorker
                         rate_okay = false;
                     }
 
-                    if (!rate_okay || (rate < 4000 || rate > 196000))
+                    if (!rate_okay || (rate < 4000 || rate > 384000))
                     {
                         error_init = true;
-                        Nan::ThrowError("rate has to be a value between 4000 and 196000");
+                        Nan::ThrowError("rate has to be a value between 4000 and 384000");
                         return;
                     }
                 }
