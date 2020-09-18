@@ -1,3 +1,10 @@
 README.md
 example.js
+
 .github
+
+node_modules
+build
+
+.vscode
+.idea
