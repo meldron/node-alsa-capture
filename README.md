@@ -1,5 +1,7 @@
 # node-alsa-capture
 
+[![NPM](https://nodei.co/npm/alsa-capture.png)](https://www.npmjs.com/package/alsa-capture)
+
 Node module to record PCM audio data from ALSA capture devices (e.g., microphones).
 
 Emits events about **overruns**, **short reads**, deviating **sample rates** or **period sizes**.
