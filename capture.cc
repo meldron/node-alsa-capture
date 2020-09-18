@@ -12,7 +12,7 @@
 
 class Capture : public StreamingWorker
 {
-  public:
+public:
     Capture(Callback *data, Callback *complete, Callback *error_callback, v8::Local<v8::Object> &options)
         : StreamingWorker(data, complete, error_callback)
     {
@@ -29,7 +29,11 @@ class Capture : public StreamingWorker
         if (options->IsObject())
         {
             {
-                v8::Local<v8::Value> channels_ = options->Get(New<v8::String>("channels").ToLocalChecked());
+                // v8::Local<v8::Value> channels_ = options->Get(New<v8::String>("channels").ToLocalChecked());
+                v8::Local<v8::Value> channels_ = Nan::Get(
+                                                     options,
+                                                     Nan::New("channels").ToLocalChecked())
+                                                     .ToLocalChecked();
 
                 if (!channels_->IsUndefined())
                 {
@@ -37,7 +41,7 @@ class Capture : public StreamingWorker
 
                     if (channels_->IsNumber())
                     {
-                        channels = channels_->NumberValue();
+                        channels = Nan::To<int>(channels_).FromJust();
                     }
                     else
                     {
@@ -54,12 +58,16 @@ class Capture : public StreamingWorker
             }
 
             {
-                v8::Local<v8::Value> debug_ = options->Get(New<v8::String>("debug").ToLocalChecked());
+                // v8::Local<v8::Value> debug_ = options->Get(New<v8::String>("debug").ToLocalChecked());
+                v8::Local<v8::Value> debug_ = Nan::Get(
+                                                  options,
+                                                  Nan::New("debug").ToLocalChecked())
+                                                  .ToLocalChecked();
                 if (!debug_->IsUndefined())
                 {
                     if (debug_->IsBoolean())
                     {
-                        debug = debug_->BooleanValue();
+                        debug = Nan::To<bool>(debug_).FromJust();
                     }
                     else
                     {
@@ -71,13 +79,19 @@ class Capture : public StreamingWorker
             }
 
             {
-                v8::Local<v8::Value> device_ = options->Get(New<v8::String>("device").ToLocalChecked());
+                // v8::Local<v8::Value> device_ = options->Get(New<v8::String>("device").ToLocalChecked());
+                v8::Local<v8::Value> device_ = Nan::Get(
+                                                   options,
+                                                   Nan::New("device").ToLocalChecked())
+                                                   .ToLocalChecked();
                 if (!device_->IsUndefined())
                 {
                     if (device_->IsString())
                     {
-                        v8::String::Utf8Value deviceUTF8(device_);
-                        device = std::string(*deviceUTF8);
+                        // v8::Isolate *isolate = v8::Isolate::GetCurrent();
+                        // v8::String::Utf8Value deviceUTF8(isolate, device_);
+                        // device = std::string(*deviceUTF8);
+                        device = *Nan::Utf8String(device_);
                     }
                     else
                     {
@@ -90,14 +104,20 @@ class Capture : public StreamingWorker
 
             {
                 std::string format_name_;
-                v8::Local<v8::Value> format_ = options->Get(New<v8::String>("format").ToLocalChecked());
+                // v8::Local<v8::Value> format_ = options->Get(New<v8::String>("format").ToLocalChecked());
+                v8::Local<v8::Value> format_ = Nan::Get(
+                                                   options,
+                                                   Nan::New("format").ToLocalChecked())
+                                                   .ToLocalChecked();
 
                 if (!format_->IsUndefined())
                 {
                     if (format_->IsString())
                     {
-                        v8::String::Utf8Value formatUTF8(format_);
-                        format_name_ = std::string(*formatUTF8);
+                        // v8::Isolate *isolate = v8::Isolate::GetCurrent();
+                        // v8::String::Utf8Value formatUTF8(isolate, format_);
+                        // format_name_ = std::string(*formatUTF8);
+                        format_name_ = *Nan::Utf8String(format_);
                     }
                     else
                     {
@@ -155,7 +175,11 @@ class Capture : public StreamingWorker
             }
 
             {
-                v8::Local<v8::Value> period_size_ = options->Get(New<v8::String>("periodSize").ToLocalChecked());
+                // v8::Local<v8::Value> period_size_ = options->Get(New<v8::String>("periodSize").ToLocalChecked());
+                v8::Local<v8::Value> period_size_ = Nan::Get(
+                                                        options,
+                                                        Nan::New("periodSize").ToLocalChecked())
+                                                        .ToLocalChecked();
 
                 if (!period_size_->IsUndefined())
                 {
@@ -163,7 +187,7 @@ class Capture : public StreamingWorker
 
                     if (period_size_->IsNumber())
                     {
-                        period_size = period_size_->NumberValue();
+                        period_size = Nan::To<int>(period_size_).FromJust();
                     }
                     else
                     {
@@ -180,7 +204,11 @@ class Capture : public StreamingWorker
             }
 
             {
-                v8::Local<v8::Value> period_time_ = options->Get(New<v8::String>("periodTime").ToLocalChecked());
+                // v8::Local<v8::Value> period_time_ = options->Get(New<v8::String>("periodTime").ToLocalChecked());
+                v8::Local<v8::Value> period_time_ = Nan::Get(
+                                                        options,
+                                                        Nan::New("periodTime").ToLocalChecked())
+                                                        .ToLocalChecked();
 
                 if (!period_time_->IsUndefined())
                 {
@@ -188,7 +216,7 @@ class Capture : public StreamingWorker
 
                     if (period_time_->IsNumber())
                     {
-                        period_time = period_time_->NumberValue();
+                        period_time = Nan::To<int>(period_time_).FromJust();
                     }
                     else
                     {
@@ -205,7 +233,11 @@ class Capture : public StreamingWorker
             }
 
             {
-                v8::Local<v8::Value> rate_ = options->Get(New<v8::String>("rate").ToLocalChecked());
+                // v8::Local<v8::Value> rate_ = options->Get(New<v8::String>("rate").ToLocalChecked());
+                v8::Local<v8::Value> rate_ = Nan::Get(
+                                                 options,
+                                                 Nan::New("rate").ToLocalChecked())
+                                                 .ToLocalChecked();
 
                 if (!rate_->IsUndefined())
                 {
@@ -213,7 +245,7 @@ class Capture : public StreamingWorker
 
                     if (rate_->IsNumber())
                     {
-                        rate = rate_->NumberValue();
+                        rate = Nan::To<int>(rate_).FromJust();
                     }
                     else
                     {
@@ -408,7 +440,7 @@ class Capture : public StreamingWorker
         snd_pcm_close(handle);
     }
 
-  private:
+private:
     int channels;
     std::string device;
     _snd_pcm_format format;
