@@ -4,9 +4,21 @@ Node module to record PCM audio data from ALSA capture devices (e.g., microphone
 
 Emits events about **overruns**, **short reads**, deviating **sample rates** or **period sizes**.
 
+## Compatibility
+
+Tested (module compiles and records audio) with the following Node versions:
+
+-   `v6.17.1 (lts/boron)`
+-   `v8.9.4`
+-   `v8.11.3`
+-   `v8.17.0 (lts/carbon)`
+-   `v10.22.1 (lts/dubnium)`
+-   `v12.14.1`
+-   `v12.18.4 (lts/erbium)`
+
 ## Dependencies
 
-This module requires `libasound2-dev` for `<alsa/asoundlib.h>` and `libasound2` to link against `libasound.so.2`.
+This module requires a `libasound2-dev` for `<alsa/asoundlib.h>` and `libasound2` to link against `libasound.so.2`.
 
 On debian derivatives system you can install all dependencies with `apt`:
 
@@ -252,7 +264,3 @@ Copyright (c) 2020 Bernd Kaiser, feinarbyte GmbH
 
 -   The ALSA c code examples
 -   The [streaming worker](https://github.com/freezer333/streaming-worker) was originally written by [Scott Frees](https://pages.ramapo.edu/~sfrees/).
-
-## Compatibility
-
-Tested with Node `v10.22.1`, `v12.14.1`, `v12.18.4`
