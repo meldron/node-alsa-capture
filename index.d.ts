@@ -22,6 +22,7 @@ declare class AlsaCapture {
         periodSize?: number;
         periodTime?: number;
         rate?: number;
+        device?: string;
     });
 
     close(): void;
