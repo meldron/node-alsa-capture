@@ -17,6 +17,8 @@ Tested (module compiles and records audio) with the following Node versions:
 -   `v10.22.1 (lts/dubnium)`
 -   `v12.14.1`
 -   `v12.18.4 (lts/erbium)`
+-   `v14.16.0 (lts/fermium)`
+-   `v15.11.0` (current)
 
 ## Dependencies
 
