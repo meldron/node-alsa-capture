@@ -2,7 +2,7 @@
 
 [![NPM](https://nodei.co/npm/alsa-capture.png)](https://www.npmjs.com/package/alsa-capture)
 
-Node module to record PCM audio data from ALSA capture devices (e.g., microphones).
+Node.js module to record PCM audio data from ALSA capture devices (e.g., microphones).
 
 Emits events about **overruns**, **short reads**, deviating **sample rates** or **period sizes**.
 
@@ -18,17 +18,35 @@ Tested (module compiles and records audio) with the following Node versions:
 -   `v12.14.1`
 -   `v12.18.4 (lts/erbium)`
 -   `v14.16.0 (lts/fermium)`
--   `v15.11.0` (current)
+-   `v15.11.0 (current)`
 
 ## Dependencies
 
-This module requires a `libasound2-dev` for `<alsa/asoundlib.h>` and `libasound2` to link against `libasound.so.2`.
+To build native Node.js modules, this projects uses [node-gyp](https://github.com/nodejs/node-gyp), which requires[[1]](https://github.com/nodejs/node-gyp#on-unix):
+
+-   Python v3.6, v3.7, v3.8, or v3.9
+-   make
+-   A proper C/C++ compiler toolchain, like GCC
+
+This module also requires a `libasound2-dev` for `<alsa/asoundlib.h>` and `libasound2` to link against `libasound.so.2`.
 
 On debian derivatives system you can install all dependencies with `apt`:
 
 ```bash
 sudo apt install libasound2 libasound2-dev
 ```
+
+## Install
+
+`npm install alsa-capture`
+
+or
+
+`yarn add alsa-capture`
+
+## Manual build
+
+Run `npm install`, which will execute a `node-gyp rebuild` and build`./build/Release/capture.node`. The `capture.node` file is needed if you want to distribute the package in binary form (`libasound.so.2` is still needed).
 
 ## Usage
 
@@ -124,9 +142,9 @@ Stops the ALSA capture thread. Afterwards the `close` event will be emitted.
 
 ### Events
 
-#### `.on("audio", (data: ArrayBuffer) => {})`
+#### `.on("audio", (data: Uint8Array) => {})`
 
-Returns the PCM data in an ArrayBuffer.
+Returns the PCM data in an `Uint8Array`.
 
 The buffer size is derived from the number of channels, the sample format and the period size:
 
@@ -262,7 +280,7 @@ So you could also use `hw:CARD=CODEC,DEV=0` to write to this external USB audio 
 
 MIT
 
-Copyright (c) 2020 Bernd Kaiser, feinarbyte GmbH
+Copyright (c) 2020, 2021 Bernd Kaiser, feinarbyte GmbH
 
 ## Acknowledgements
 
