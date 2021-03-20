@@ -7,7 +7,12 @@
 
 #include <alsa/asoundlib.h>
 
+#include "macros.h"
+
+DISABLE_WCAST_FUNCTION_TYPE
 #include "nan.h"
+DISABLE_WCAST_FUNCTION_TYPE_END
+
 #include "streaming-worker.h"
 
 class Capture : public StreamingWorker

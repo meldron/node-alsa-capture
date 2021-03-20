@@ -31,7 +31,10 @@ SOFTWARE.
 #include <mutex>
 #include <chrono>
 #include <condition_variable>
+
+DISABLE_WCAST_FUNCTION_TYPE
 #include <nan.h>
+DISABLE_WCAST_FUNCTION_TYPE_END
 
 using namespace Nan;
 using namespace std;
