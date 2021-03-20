@@ -461,4 +461,6 @@ StreamingWorker *create_worker(Callback *data, Callback *complete, Callback *err
     return new Capture(data, complete, error_callback, options);
 }
 
+DISABLE_WCAST_FUNCTION_TYPE
 NODE_MODULE(capture, StreamWorkerWrapper::Init)
+DISABLE_WCAST_FUNCTION_TYPE_END
