@@ -18,7 +18,9 @@ Tested (module compiles and records audio) with the following Node versions:
 -   `v12.14.1`
 -   `v12.18.4 (lts/erbium)`
 -   `v14.16.0 (lts/fermium)`
--   `v15.11.0 (current)`
+-   `v15.11.0`
+-   `v16.13.0 (lts/gallium)`
+-   `v17.1.0 (current)`
 
 ## Dependencies
 
@@ -280,7 +282,7 @@ So you could also use `hw:CARD=CODEC,DEV=0` to write to this external USB audio 
 
 MIT
 
-Copyright (c) 2020, 2021 Bernd Kaiser, feinarbyte GmbH
+Copyright (c) 2020, 2021 Bernd Kaiser
 
 ## Acknowledgements
 
