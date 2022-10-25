@@ -1,6 +1,6 @@
 {
     "name": "alsa-capture",
-    "version": "0.2.2",
+    "version": "0.3.0",
     "description": "capture alsa pcm packages",
     "main": "index.js",
     "scripts": {

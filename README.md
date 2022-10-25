@@ -20,7 +20,9 @@ Tested (module compiles and records audio) with the following Node versions:
 -   `v14.16.0 (lts/fermium)`
 -   `v15.11.0`
 -   `v16.13.0 (lts/gallium)`
--   `v17.1.0 (current)`
+-   `v17.1.0`
+-   `v18.11.0` (successfully built, but audio recording not tested)
+-   `v19.0.0 (current)`
 
 ## Dependencies
 
@@ -28,7 +30,8 @@ To build native Node.js modules, this projects uses [node-gyp](https://github.co
 
 -   Python v3.6, v3.7, v3.8, or v3.9
 -   make
--   A proper C/C++ compiler toolchain, like GCC
+-   A proper C/C++ compiler toolchain, like GCC (must support 'c++17')
+    )
 
 This module also requires a `libasound2-dev` for `<alsa/asoundlib.h>` and `libasound2` to link against `libasound.so.2`.
 
