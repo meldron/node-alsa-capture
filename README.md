@@ -285,7 +285,7 @@ So you could also use `hw:CARD=CODEC,DEV=0` to write to this external USB audio 
 
 MIT
 
-Copyright (c) 2020, 2021 Bernd Kaiser
+Copyright (c) 2020, 2021, 2022 Bernd Kaiser
 
 ## Acknowledgements
 
